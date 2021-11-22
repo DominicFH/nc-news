@@ -7,7 +7,7 @@ body {
 	text-align: center;
 	display: grid;
 	grid-template-columns: 100%;
-	grid-template-rows: min-content min-content auto;
+	grid-template-rows: min-content auto auto;
 	grid-template-areas:
 		"header"
 		"nav"
@@ -24,4 +24,17 @@ body {
 
 .content {
 	border: powderblue solid 2px;
+}
+
+.nav-button {
+	border: black solid 3px;
+	background-color: seashell;
+	display: block;
+	width: 8em;
+	height: 3em;
+}
+
+nav li {
+	list-style-type: none;
+	display: inline-block;
 }
