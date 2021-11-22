@@ -4,9 +4,9 @@ import { useParams } from 'react-router-dom'
 const Article = () => {
     const {article_id} = useParams();
     return (
-        <div>
-            <h1>Article</h1>
-            <h2>{article_id}</h2>
+        <div className="content">
+            <h2>Individual Article</h2>
+            <h3>{article_id}</h3>
         </div>
     );
 };

@@ -4,6 +4,7 @@ import Articles from "./Components/Articles";
 import Header from "./Components/Header";
 import Nav from "./Components/Nav";
 import Article from "./Components/Article";
+import Users from "./Components/Users";
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 					<Route path="/" element={<Articles />} />
 					<Route path="/articles" element={<Articles />} />
 					<Route path="/articles/:article_id" element={<Article />} />
+					<Route path="/users/" element={<Users />} />
 				</Routes>
 			</div>
 		</BrowserRouter>

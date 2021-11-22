@@ -2,8 +2,8 @@ import React from 'react';
 
 const Nav = () => {
     return (
-        <div>
-            <h1>Nav</h1>
+        <div className='nav'>
+            <h2>Nav</h2>
         </div>
     );
 };

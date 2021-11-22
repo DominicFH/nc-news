@@ -5,4 +5,23 @@ body {
 .App {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	text-align: center;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: min-content min-content auto;
+	grid-template-areas:
+		"header"
+		"nav"
+		"content";
+}
+
+.header {
+	border: orangered solid 2px;
+}
+
+.nav {
+	border: peru solid 2px;
+}
+
+.content {
+	border: powderblue solid 2px;
 }

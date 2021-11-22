@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Articles = () => {
+const Users = () => {
     return (
         <div className="content">
-            <h2>Articles</h2>
+            <h2>Users page coming soon!</h2>
         </div>
     );
 };
 
-export default Articles;
+export default Users;
