@@ -9,11 +9,9 @@ const Articles = () => {
     useEffect(() => {
         getArticles().then((articles) => {
             setArticles(articles);
-            setIsLoading(false)
+            setIsLoading(false);
         })
     }, [])
-
-    console.log(articles)
 
     if (isLoading) return <h2>Loading articles...</h2>
     return (
