@@ -38,3 +38,48 @@ nav li {
 	list-style-type: none;
 	display: inline-block;
 }
+
+.all-articles {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+}
+
+.article-card {
+	justify-content: center;
+	align-items: center;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 80% 20%;
+	grid-template-areas:
+		"title author"
+		"votes comment-count";
+	background-color: burlywood;
+	margin: 10px;
+	padding: 10px;
+	border: 3px solid black;
+	border-radius: 10px;
+	width: 400px;
+	height: 270px;
+	box-shadow: 1px 1px 5px black;
+}
+
+li {
+	list-style-type: none;
+}
+
+.article-card:link {
+	color: black;
+	text-decoration: none;
+}
+
+.article-card:visited {
+	color: black;
+	text-decoration: none;
+}
+
+.article-card:hover {
+	color: white;
+}
