@@ -29,15 +29,10 @@ export const getArticleComments = (article_id) => {
 };
 
 export const postComment = (article_id, newComment) => {
-	console.log(article_id);
-	console.log(newComment);
 	return newsApi
 		.post(`/articles/${article_id}/comments`, newComment)
 		.then((res) => {
 			return res.data.comment;
-		})
-		.catch((err) => {
-			console.dir(err);
 		});
 };
 

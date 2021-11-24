@@ -21,12 +21,13 @@ const Article = () => {
         getArticleComments(article_id).then((comments) => {
             setComments(comments)
         })
-    }, [article_id])
+    }, [article_id, comments])
 
     const handleSubmit = (event) => {
         event.preventDefault();
         postComment(article_id, newComment);
         setNewComment({})
+        event.target.reset();
     }
 
     const handleInput = (event) => {
@@ -44,7 +45,7 @@ const Article = () => {
             <h3>Votes: {article.votes}</h3>
             <p>{article.body}</p>
             <h3>Add a comment:</h3>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="add-comment-form">
                 <label htmlFor="username">Enter an existing username: </label>
                 <input type="text" name="username" id="username" onChange={handleInput} required/>
                 <label htmlFor="body">Enter comment: </label>

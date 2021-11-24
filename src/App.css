@@ -113,3 +113,7 @@ li {
 	height: 290px;
 	box-shadow: 1px 1px 5px black;
 }
+
+.add-comment-form {
+	border: springgreen solid 2px;
+}
