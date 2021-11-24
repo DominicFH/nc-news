@@ -41,9 +41,11 @@ const Article = () => {
     if (isLoading) return <h2>Loading article...</h2>
     return (
         <div className="content">
+            <main className="article">
             <h2>{article.title}</h2>
             <h3>Votes: {article.votes}</h3>
             <p>{article.body}</p>
+            </main>
             <h3>Add a comment:</h3>
             <form onSubmit={handleSubmit} className="add-comment-form">
                 <label htmlFor="username">Enter an existing username: </label>

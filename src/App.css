@@ -109,11 +109,26 @@ li {
 	padding: 10px;
 	border: 3px solid black;
 	border-radius: 10px;
-	width: 400px;
-	height: 290px;
+	width: 30vh;
+	height: auto;
 	box-shadow: 1px 1px 5px black;
 }
 
 .add-comment-form {
 	border: springgreen solid 2px;
+	background-color: #bee3db;
+	margin: 10px;
+	padding: 10px;
+	border: 3px solid black;
+	border-radius: 10px;
+	box-shadow: 1px 1px 5px black;
+}
+
+.article {
+	background-color: #bee3db;
+	margin: 10px;
+	padding: 10px;
+	border: 3px solid black;
+	border-radius: 10px;
+	box-shadow: 1px 1px 5px black;
 }
