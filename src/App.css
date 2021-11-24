@@ -1,5 +1,5 @@
 body {
-	background-color: blanchedalmond;
+	background-color: #e1f2fe;
 }
 
 .App {
@@ -28,7 +28,7 @@ body {
 
 .nav-button {
 	border: black solid 3px;
-	background-color: seashell;
+	background-color: #98d2eb;
 	display: block;
 	width: 8em;
 	height: 3em;
