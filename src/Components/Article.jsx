@@ -28,7 +28,8 @@ const Article = () => {
             <h2>{article.title}</h2>
             <h3>Votes: {article.votes}</h3>
             <p>{article.body}</p>
-            <ul>
+            <h3>Comments:</h3>
+            <ul className="all-comments">
                 {comments.map((comment) => {
                     return <CommentCard key={comment.comment_id} {...comment} />
                 })}

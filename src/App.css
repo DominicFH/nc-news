@@ -1,9 +1,9 @@
 body {
-	background-color: #e1f2fe;
+	background-color: #faf9f9;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .App {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	text-align: center;
 	display: grid;
 	grid-template-columns: 100%;
@@ -27,11 +27,14 @@ body {
 }
 
 .nav-button {
-	border: black solid 3px;
-	background-color: #98d2eb;
-	display: block;
-	width: 8em;
-	height: 3em;
+	justify-content: center;
+	align-items: center;
+	background-color: #bee3db;
+	margin: 10px;
+	padding: 10px;
+	border: 2px solid black;
+	border-radius: 10px;
+	box-shadow: 1px 1px 3px black;
 }
 
 nav li {
@@ -56,7 +59,7 @@ nav li {
 	grid-template-areas:
 		"title author"
 		"votes comment-count";
-	background-color: burlywood;
+	background-color: #bee3db;
 	margin: 10px;
 	padding: 10px;
 	border: 3px solid black;
@@ -82,4 +85,31 @@ li {
 
 .article-card:hover {
 	color: white;
+}
+
+.all-comments {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+}
+
+.comment-card {
+	justify-content: center;
+	align-items: center;
+	display: grid;
+	grid-template-areas:
+		"body"
+		"author"
+		"timestamp"
+		"votes";
+	background-color: #bee3db;
+	margin: 10px;
+	padding: 10px;
+	border: 3px solid black;
+	border-radius: 10px;
+	width: 400px;
+	height: 290px;
+	box-shadow: 1px 1px 5px black;
 }

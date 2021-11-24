@@ -1,11 +1,14 @@
 import React from 'react';
 
 const CommentCard = (comment) => {
-    console.log(comment)
     return (
         <li>
-            <p>{comment.body}</p>
-            <p>Posted on: {comment.created_at.substr(0,10)}</p>
+            <div className="comment-card">
+            <p className="body">{comment.body}</p>
+            <p className="author">Commentor: {comment.author}</p>
+            <p className="timestamp">Posted on: {comment.created_at.substr(0,10)}</p>
+            <p className="votes">Votes: {comment.votes}</p>
+            </div>
         </li>
     );
 };
