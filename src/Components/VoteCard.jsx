@@ -31,7 +31,7 @@ const VoteCard = (props) => {
 
     return (
         <div className="vote-card">
-            <p>Votes: {parent.votes}</p>
+            <h3>Votes: {parent.votes}</h3>
             <button onClick={addVote}>+</button>
             <button onClick={subVote}>-</button>
         </div>

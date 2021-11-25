@@ -45,9 +45,9 @@ const Article = () => {
     return (
         <div className="content">
             <main className="article">
-                <h2>{article.title}</h2>
-                <VoteCard article={article} setArticle={setArticle}/>
-                <p>{article.body}</p>
+                <h2 className="title">{article.title}</h2>
+                <VoteCard className="votes" article={article} setArticle={setArticle}/>
+                <p className="body">{article.body}</p>
             </main>
             <form onSubmit={handleSubmit} className="add-comment-form">
                 <h3>Add a comment:</h3>
