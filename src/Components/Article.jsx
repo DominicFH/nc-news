@@ -46,8 +46,7 @@ const Article = () => {
         <div className="content">
             <main className="article">
                 <h2>{article.title}</h2>
-                <h3>Votes: {article.votes}</h3>
-                <VoteCard article={article}/>
+                <VoteCard article={article} setArticle={setArticle}/>
                 <p>{article.body}</p>
             </main>
             <form onSubmit={handleSubmit} className="add-comment-form">

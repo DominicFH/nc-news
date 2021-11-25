@@ -1,4 +1,5 @@
 import React from 'react';
+import { patchArticle } from '../Utils/api';
 
 const VoteCard = (props) => {
     let parent
@@ -10,19 +11,27 @@ const VoteCard = (props) => {
 
     const addVote = () => {
         if (!parent.comment_id) {
-            console.log("Is article")
-        } else console.log("Is not article")
+            patchArticle(parent.article_id, {inc_votes: 1}).then((response) => {
+                props.setArticle(response[0])
+            })
+        } else {
+            console.log("Backend not yet setup for changing comment votes")
+        }
     }
 
     const subVote = () => {
         if (!parent.comment_id) {
-            console.log("Is article")
-        } else console.log ("Not article")
+            patchArticle(parent.article_id, {inc_votes: -1}).then((response) => {
+                props.setArticle(response[0])
+            })
+        } else {
+            console.log ("Backend not yet setup for changing comment votes")
+        }
     }
 
     return (
         <div className="vote-card">
-            <p>VOTE COUNT</p>
+            <p>Votes: {parent.votes}</p>
             <button onClick={addVote}>+</button>
             <button onClick={subVote}>-</button>
         </div>

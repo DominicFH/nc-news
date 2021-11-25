@@ -39,3 +39,9 @@ export const postComment = (article_id, newComment) => {
 export const deleteComment = (comment_id) => {
 	return newsApi.delete(`/comments/${comment_id}`);
 };
+
+export const patchArticle = (article_id, inc_object) => {
+	return newsApi.patch(`/articles/${article_id}`, inc_object).then((res) => {
+		return res.data.article;
+	});
+};
