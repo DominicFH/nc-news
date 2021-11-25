@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { getArticle, getArticleComments, postComment } from '../Utils/api';
 import CommentCard from './CommentCard';
+import VoteCard from './VoteCard';
 
 const Article = () => {
     const {article_id} = useParams();
@@ -18,14 +19,16 @@ const Article = () => {
     }, [article_id, comments])
 
     useEffect(() => {
-        getArticleComments(article_id).then((comments) => {
-            setComments(comments)
+        getArticleComments(article_id).then((receivedData) => {
+            setComments(receivedData)
         })
-    }, [article_id, comments])
+    }, [article_id])
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        postComment(article_id, newComment);
+        postComment(article_id, newComment).then(() => {getArticleComments(article_id).then((receivedData) => {
+            setComments(receivedData)
+        })})
         setNewComment({})
         event.target.reset();
     }
@@ -42,24 +45,27 @@ const Article = () => {
     return (
         <div className="content">
             <main className="article">
-            <h2>{article.title}</h2>
-            <h3>Votes: {article.votes}</h3>
-            <p>{article.body}</p>
+                <h2>{article.title}</h2>
+                <h3>Votes: {article.votes}</h3>
+                <VoteCard article={article}/>
+                <p>{article.body}</p>
             </main>
-            <h3>Add a comment:</h3>
             <form onSubmit={handleSubmit} className="add-comment-form">
+                <h3>Add a comment:</h3>
                 <label htmlFor="username">Enter an existing username: </label>
                 <input type="text" name="username" id="username" onChange={handleInput} required/>
                 <label htmlFor="body">Enter comment: </label>
                 <input type="text" name="body" id="body" onChange={handleInput} required/>
                 <button type="submit">Add Comment</button>
             </form>
-            <h3>Comments:</h3>
-            <ul className="all-comments">
-                {comments.map((comment) => {
-                    return <CommentCard key={comment.comment_id} {...comment} />
-                })}
-            </ul>
+            <div>
+                <h3>Comments:</h3>
+                <ul className="all-comments">
+                    {comments.map((comment) => {
+                        return <CommentCard key={comment.comment_id} {...comment} comments={comments} setComments={setComments} article_id={article_id}/>
+                    })}
+                </ul>
+            </div>
         </div>
     );
 };

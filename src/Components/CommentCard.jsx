@@ -1,12 +1,13 @@
 import React from 'react';
-import { deleteComment } from '../Utils/api';
+import { deleteComment, getArticleComments } from '../Utils/api';
 import VoteCard from './VoteCard';
 
 const CommentCard = (comment) => {
 
     const handleClick = () => {
-        deleteComment(comment.comment_id)
-    }
+        deleteComment(comment.comment_id).then(() => {getArticleComments(comment.article_id).then((receivedData) => {
+            comment.setComments(receivedData)})
+    })}
 
     return (
         <li>
@@ -15,7 +16,7 @@ const CommentCard = (comment) => {
             <p className="author">Commentor: {comment.author}</p>
             <p className="timestamp">Posted on: {comment.created_at.substr(0,10)}</p>
             <p className="votes">Votes: {comment.votes}</p>
-            < VoteCard />
+            <VoteCard comment={comment}/>
             <button onClick={handleClick}>Delete Comment</button>
             </div>
         </li>
