@@ -36,7 +36,7 @@ a {
 	border: powderblue solid 2px;
 }
 
-.nav-button {
+.button {
 	justify-content: center;
 	align-items: center;
 	background-color: #b5c99a;
@@ -45,6 +45,11 @@ a {
 	border: 2px solid black;
 	border-radius: 10px;
 	box-shadow: 1px 1px 3px black;
+}
+
+.button:hover {
+	color: white;
+	cursor: pointer;
 }
 
 nav li {

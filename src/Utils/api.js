@@ -4,10 +4,16 @@ const newsApi = axios.create({
 	baseURL: "https://dominic-news-project.herokuapp.com/api",
 });
 
-export const getArticles = () => {
-	return newsApi.get("/articles").then((res) => {
-		return res.data.articles;
-	});
+export const getArticles = (queryStr) => {
+	if (queryStr.length <= 1) {
+		return newsApi.get("/articles").then((res) => {
+			return res.data.articles;
+		});
+	} else if (queryStr.length > 1) {
+		return newsApi.get(`/articles${queryStr}`).then((res) => {
+			return res.data.articles;
+		});
+	}
 };
 
 export const getTopics = () => {
