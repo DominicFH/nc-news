@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getArticles } from "../Utils/api.js";
+import { capitalise } from '../Utils/functions.js';
 import ArticleCard from "./ArticleCard"
 import OrderSelector from './OrderSelector.jsx';
 import SortBySelector from './SortBySelector.jsx';
@@ -38,18 +39,36 @@ const Articles = () => {
 
 
     if (isLoading) return <h2>Loading articles...</h2>
-    return (
-        <div className="content">
-            <SortBySelector setChosenSortBy={setChosenSortBy}/>
-            <OrderSelector setChosenOrder={setChosenOrder} chosenSortBy={chosenSortBy}/>
-            <TopicSelector chosenTopic={chosenTopic} setChosenTopic={setChosenTopic}/>
-                <ul className="all-articles">
-                    {articles.map((article) => {
-                        return <ArticleCard key={article.article_id} {...article} />
-                    })}
-                </ul>
-        </div>
-    );
+    if(!chosenTopic) {
+        return (
+            <div className="content">
+                <SortBySelector setChosenSortBy={setChosenSortBy}/>
+                <OrderSelector setChosenOrder={setChosenOrder} chosenSortBy={chosenSortBy}/>
+                <TopicSelector setChosenTopic={setChosenTopic}/>
+                <h2>All Articles:</h2>
+                    <ul className="all-articles">
+                        {articles.map((article) => {
+                            return <ArticleCard key={article.article_id} {...article} />
+                        })}
+                    </ul>
+            </div>
+        );
+    } else {
+        return (
+            <div className="content">
+                <SortBySelector setChosenSortBy={setChosenSortBy}/>
+                <OrderSelector setChosenOrder={setChosenOrder} chosenSortBy={chosenSortBy}/>
+                <TopicSelector setChosenTopic={setChosenTopic}/>
+                <h2>{capitalise(chosenTopic)} Articles:</h2>
+                    <ul className="all-articles">
+                        {articles.map((article) => {
+                            return <ArticleCard key={article.article_id} {...article} />
+                        })}
+                    </ul>
+            </div>
+        )
+    }
+
 };
 
 export default Articles;

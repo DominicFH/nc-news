@@ -7,10 +7,10 @@ const OrderSelector = ({setChosenOrder}) => {
     }
 
     return (
-        <div>
+        <div className="order-selector">
             <h3>Order by:</h3>
-            <button className="button" onClick={handleClick} value='asc' key='asc'>Ascending</button>
-            <button className="button" onClick={handleClick} value='desc' key='desc'>Descending</button>
+            <button className="article-button" onClick={handleClick} value='asc' key='asc'>Ascending</button>
+            <button className="article-button" onClick={handleClick} value='desc' key='desc'>Descending</button>
         </div>
     );
 };

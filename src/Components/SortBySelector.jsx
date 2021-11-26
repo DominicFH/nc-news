@@ -7,13 +7,13 @@ const SortBySelector = ({setChosenSortBy}) => {
     }
 
     return (
-        <div>
+        <div className="sortby-selector">
             <h3>Sort by:</h3>
-            <button className="button" onClick={handleClick} value='author' key='author'>Author</button>
-            <button className="button" onClick={handleClick} value='title' key='title'>Title</button>
-            <button className="button" onClick={handleClick} value='topic' key='topic'>Topic</button>
-            <button className="button" onClick={handleClick} value='created_at' key='date'>Date</button>
-            <button className="button" onClick={handleClick} value='votes' key='votes'>Votes</button>
+            <button className="article-button" onClick={handleClick} value='author' key='author'>Author</button>
+            <button className="article-button" onClick={handleClick} value='title' key='title'>Title</button>
+            <button className="article-button" onClick={handleClick} value='topic' key='topic'>Topic</button>
+            <button className="article-button" onClick={handleClick} value='created_at' key='date'>Date</button>
+            <button className="article-button" onClick={handleClick} value='votes' key='votes'>Votes</button>
         </div>
     );
 };
