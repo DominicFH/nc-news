@@ -9,8 +9,10 @@ const TopicSelector = ({setChosenTopic}) => {
     useEffect(() => {
         getTopics().then((topics) => {
             setTopics(topics)
-        })
-    }, [])
+        }).catch((err) => {
+            console.log(err)
+        }, [])
+    })
 
     const handleClick = (event) => {
         setChosenTopic(event.target.value)
@@ -27,6 +29,6 @@ const TopicSelector = ({setChosenTopic}) => {
             </ul>
         </div>
     )
-};
+}
 
 export default TopicSelector;
