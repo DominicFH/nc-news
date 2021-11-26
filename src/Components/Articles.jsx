@@ -42,9 +42,11 @@ const Articles = () => {
     if(!chosenTopic) {
         return (
             <div className="content">
-                <SortBySelector setChosenSortBy={setChosenSortBy}/>
-                <OrderSelector setChosenOrder={setChosenOrder} chosenSortBy={chosenSortBy}/>
-                <TopicSelector setChosenTopic={setChosenTopic}/>
+                <div className="query-selectors">
+                    <SortBySelector setChosenSortBy={setChosenSortBy}/>
+                    <OrderSelector setChosenOrder={setChosenOrder} chosenSortBy={chosenSortBy}/>
+                    <TopicSelector setChosenTopic={setChosenTopic}/>
+                </div>
                 <h2>All Articles:</h2>
                     <ul className="all-articles">
                         {articles.map((article) => {
@@ -56,9 +58,11 @@ const Articles = () => {
     } else {
         return (
             <div className="content">
-                <SortBySelector setChosenSortBy={setChosenSortBy}/>
-                <OrderSelector setChosenOrder={setChosenOrder} chosenSortBy={chosenSortBy}/>
-                <TopicSelector setChosenTopic={setChosenTopic}/>
+                <div className="query-selectors">
+                    <SortBySelector setChosenSortBy={setChosenSortBy}/>
+                    <OrderSelector setChosenOrder={setChosenOrder} chosenSortBy={chosenSortBy}/>
+                    <TopicSelector setChosenTopic={setChosenTopic}/>
+                </div>
                 <h2>{capitalise(chosenTopic)} Articles:</h2>
                     <ul className="all-articles">
                         {articles.map((article) => {
