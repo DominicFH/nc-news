@@ -29,7 +29,7 @@ a {
 	padding: 1rem;
 }
 
-.button {
+.nav-button {
 	justify-content: center;
 	align-items: center;
 	background-color: #b5c99a;
@@ -40,7 +40,7 @@ a {
 	box-shadow: 1px 1px 3px black;
 }
 
-.button:hover {
+.nav-button:hover {
 	color: white;
 	cursor: pointer;
 }
@@ -75,6 +75,10 @@ nav li {
 	width: 400px;
 	height: 270px;
 	box-shadow: 1px 1px 5px black;
+}
+
+.article-card h3 {
+	font-size: x-large;
 }
 
 li {
