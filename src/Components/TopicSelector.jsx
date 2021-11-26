@@ -9,9 +9,7 @@ const TopicSelector = ({setChosenTopic}) => {
     useEffect(() => {
         getTopics().then((topics) => {
             setTopics(topics)
-        }).catch((err) => {
-            console.log(err)
-        }, [])
+        })
     })
 
     const handleClick = (event) => {
