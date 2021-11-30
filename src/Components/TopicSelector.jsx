@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react/cjs/react.development';
 import { getTopics } from '../Utils/api';
 import { capitalise } from '../Utils/functions';
 
 const TopicSelector = () => {
-    const [topics, setTopics] = useState([])
+    const [topics, setTopics] = useState([]);
 
     useEffect(() => {
         getTopics().then((topics) => {
             setTopics(topics)
         })
-    })
+    }, [])
 
     return (
         <div className="topic-selector">
