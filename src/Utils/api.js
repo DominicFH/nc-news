@@ -16,6 +16,18 @@ export const getArticles = (queryStr) => {
 	}
 };
 
+export const getArticlesByTopic = (topic, queryStr) => {
+	if (queryStr.length <= 1) {
+		return newsApi.get(`/articles?topic=${topic}`).then((res) => {
+			return res.data.articles;
+		});
+	} else if (queryStr.length > 1) {
+		return newsApi.get(`/articles?topic=${topic}${queryStr}`).then((res) => {
+			return res.data.articles;
+		});
+	}
+};
+
 export const getTopics = () => {
 	return newsApi.get("/topics").then((res) => {
 		return res.data.topics;

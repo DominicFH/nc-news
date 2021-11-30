@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Articles from "./Components/Articles";
+import AllArticles from "./Components/AllArticles";
 import Header from "./Components/Header";
 import Nav from "./Components/Nav";
 import Article from "./Components/Article";
@@ -13,8 +13,8 @@ function App() {
 				<Header />
 				<Nav />
 				<Routes>
-					<Route path="/" element={<Articles />} />
-					<Route path="/articles" element={<Articles />} />
+					<Route path="/" element={<AllArticles />} />
+					<Route path="/articles" element={<AllArticles />} />
 					<Route path="/articles/:article_id" element={<Article />} />
 					<Route path="/users/" element={<Users />} />
 				</Routes>
