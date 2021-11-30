@@ -20,7 +20,7 @@ const ArticlesByTopic = ({topic}) => {
             setArticles(receivedArticles)
             setIsLoading(false)
         })
-    }, [chosenOrder, chosenSortBy])
+    }, [topic, queryStr, chosenOrder, chosenSortBy])
 
     let queryArray = [];
 
