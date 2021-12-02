@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# NC-News
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://dominic-news-app.netlify.app/
 
-## Available Scripts
+This project builds the frontend for a news website consisting of a
+collection of articles which can be divided into different topics.
 
-In the project directory, you can run:
+Each article can be up or downvoted and also has its own comments as well as a new
+comment form
 
-### `npm start`
+The above link will take you to the hosted version of this website to see
+a user's perspective.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This web app has been built with the backend which can be
+found at the following page:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+https://github.com/DominicFH/dominic-news-project
 
-### `npm test`
+## Run Locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+First you will need to clone the project into your chosen folder
 
-### `npm run build`
+```bash
+  git clone https://github.com/DominicFH/nc-news
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Go to the project directory
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+  cd nc-news
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install dependencies
 
-### `npm run eject`
+```bash
+  npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Run the app in development mode
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+  npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Minimum Requirements
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To run this project you will require the following minimum versions:
 
-## Learn More
+Node.js: `14.17.6`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Future Additions
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Due to the backend not being fully finalised, there are some
+features which I will still be looking to implement in the future
+as well as some refinements:
 
-### Code Splitting
+- Design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  Refine CSS for buttons and overall design
 
-### Analyzing the Bundle Size
+- User Feature
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  A page where a new user can be created.
 
-### Making a Progressive Web App
+  Sign in as a user
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  Amending the new comment form to account for a user
+  being logged in as opposed to entering a name
 
-### Advanced Configuration
+- Comments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  Add functionality for comments to be up or downvoted
 
-### Deployment
+- Articles
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  Add a form to create a new article which will require a
+  user to be logged in
 
-### `npm run build` fails to minify
+  Add functionality for an article to be deleted
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Topics
+
+  Add a form to add a new topic
